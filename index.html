@@ -3,24 +3,15 @@
 <script src= "angular.min.js"></script>
 <body>
 
-<p>Try to change the names.</p>
+<div ng-app="myApp" ng-controller="personCtrl">
 
-<div ng-app="myApp" ng-controller="myCtrl">
+<p>The name is {{ lastName | uppercase }}</p>
 
-First Name: <input type="text" ng-model="firstName"><br>
-Last Name: <input type="text" ng-model="lastName"><br>
-<br>
-Full Name: {{firstName + " " + lastName}}
+<p>The name is {{ lastName | lowercase }}</p>
 
 </div>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-  $scope.firstName= "John";
-  $scope.lastName= "Doe";
-});
-</script>
+<script src="personController.js"></script>
 
 </body>
 </html>
