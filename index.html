@@ -6,12 +6,6 @@ table, th , td {
   border-collapse: collapse;
   padding: 5px;
 }
-table tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-table tr:nth-child(even) {
-  background-color: #ffffff;
-}
 </style>
 <script src= "angular.min.js"></script>
 <body>
@@ -20,9 +14,10 @@ table tr:nth-child(even) {
 
 <table>
   <tr ng-repeat="x in names">
-    <td>{{ $index + 1 }}</td>
-    <td>{{ x.Name }}</td>
-    <td>{{ x.Country }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Name }}</td>
+    <td ng-if="$even">{{ x.Name }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Country }}</td>
+    <td ng-if="$even">{{ x.Country }}</td>
   </tr>
 </table>
 
