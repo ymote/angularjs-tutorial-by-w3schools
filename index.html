@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <script src= "angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="formCtrl">
+<div ng-controller="formCtrl">
   <form novalidate>
     First Name:<br>
     <input type="text" ng-model="user.firstName"><br>
@@ -11,10 +11,10 @@
     <input type="text" ng-model="user.lastName">
     <br><br>
     <button ng-click="reset()">RESET</button>
-    <button ng-click="save()">SAVE</button>
+    <button ng-click="save()" class="save">SAVE</button>
   </form>
   <p>form = {{user }}</p>
-  <p>master = {{master}}</p>
+  <p class="master">master = {{master}}</p>
 </div>
 
 <script>
