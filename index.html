@@ -3,24 +3,37 @@
 <script src= "angular.min.js"></script>
 <body>
 
-<p>Try to change the names.</p>
+<div ng-app="" ng-init="mySwitch=true">
 
-<div ng-app="myApp" ng-controller="myCtrl">
+<h3> ng-disabled </h3>
 
-First Name: <input type="text" ng-model="firstName"><br>
-Last Name: <input type="text" ng-model="lastName"><br>
-<br>
-Full Name: {{firstName + " " + lastName}}
+<p>
+  <button ng-disabled="mySwitch">Click Me!</button>
+</p>
 
-</div>
+<p>
+  <input type="checkbox" ng-model="mySwitch"/>Button
+</p>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-  $scope.firstName= "John";
-  $scope.lastName= "Doe";
-});
-</script>
+<p>
+  {{ mySwitch }}
+</p>
+
+<h3> ng-show </h3>
+
+<p ng-show="true">Button is clickable.</p>
+
+<p ng-show="false">I am not visible.</p>
+
+<p ng-show="hour > 12">I am visible.</p>
+
+<h3> ng-hide </h3>
+
+<p ng-hide="true">Button is not clickable.</p>
+
+<p ng-hide="false">I am visible.</p>
+
+</div> 
 
 </body>
 </html>
